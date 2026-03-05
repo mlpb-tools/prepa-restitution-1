@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zine Collectif · Parcours 3 temps — LS4YOU</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C62828;
+    --yellow: #FFD740;
+    --turquoise: #00BCD4;
+    --mint: #43A047;
+    --orange: #FF7043;
+    --purple: #7B1FA2;
+    --black: #1A1A1A;
+    --white: #FFFDF8;
+    --grey: #F4F4F0;
+    --ink: 2.5px solid var(--black);
+    --sh: 4px 4px 0 var(--black);
+    --sh-s: 3px 3px 0 var(--black);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--black); padding: 36px 24px 30px;
+    position: relative; overflow: hidden;
+  }
+  .hero-deco {
+    position: absolute; right: -20px; top: -10px;
+    font-size: 160px; font-family: 'Poppins', sans-serif; font-weight: 900;
+    color: rgba(255,215,64,.06); line-height: 1; pointer-events: none;
+    white-space: nowrap; letter-spacing: -8px;
+  }
+  .hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--yellow); border: var(--ink); border-radius: 20px;
+    padding: 4px 14px; font-weight: 700; font-size: 11px;
+    box-shadow: 2px 2px 0 var(--black); margin-bottom: 16px;
+    text-transform: uppercase; letter-spacing: .6px;
+  }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+  h1 {
+    font-family: 'Poppins', sans-serif; font-weight: 900;
+    font-size: clamp(26px, 5.5vw, 46px); color: var(--white); line-height: 1.05;
+    margin-bottom: 10px;
+  }
+  h1 em { color: var(--yellow); font-style: normal; }
+  .hero-desc { color: rgba(255,255,255,.65); font-size: 13px; line-height: 1.65; max-width: 480px; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .hc {
+    background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.18);
+    border-radius: 20px; padding: 4px 13px; font-size: 11px;
+    color: rgba(255,255,255,.8); font-weight: 600;
+  }
+
+  /* ─── PARCOURS STRIP ─── */
+  .parcours {
+    display: grid; grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center; background: var(--yellow);
+    border-bottom: var(--ink); padding: 0;
+  }
+  .parcours-phase {
+    padding: 14px 18px; text-align: center; position: relative; cursor: default;
+  }
+  .ph-num {
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 1px; opacity: .5; margin-bottom: 2px;
+  }
+  .ph-label {
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 13px; line-height: 1.2;
+  }
+  .ph-dur { font-size: 10px; font-weight: 600; opacity: .6; margin-top: 2px; }
+  .ph-arrow {
+    font-size: 18px; opacity: .4; flex-shrink: 0;
+    padding: 0 4px;
+  }
+  .ph-visit {
+    background: var(--black); color: var(--yellow);
+  }
+  .ph-visit .ph-num, .ph-visit .ph-dur { opacity: .45; color: var(--yellow); }
+
+  /* ─── MAIN ─── */
+  main { max-width: 760px; margin: 0 auto; padding: 32px 18px 64px; }
+
+  /* ─── SECTION TITLE ─── */
+  .sec-title {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+  }
+  .sec-num {
+    width: 40px; height: 40px; border-radius: 50%; border: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 16px;
+    box-shadow: var(--sh-s); flex-shrink: 0;
+  }
+  .sec-text h2 {
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 17px; line-height: 1.2;
+  }
+  .sec-text p { font-size: 12px; color: #777; font-weight: 500; margin-top: 2px; }
+
+  /* ─── PHASE SEPARATOR ─── */
+  .phase-sep {
+    margin: 36px 0 28px; padding: 0; display: flex; align-items: center; gap: 14px;
+  }
+  .phase-sep .ps-label {
+    display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+    border: var(--ink); border-radius: 30px; padding: 6px 16px;
+    box-shadow: var(--sh-s);
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .5px;
+  }
+  .phase-sep .ps-ico { font-size: 16px; }
+  .phase-sep::before, .phase-sep::after {
+    content: ''; flex: 1; height: 2px; background: #DDD;
+  }
+
+  /* ─── CARD ─── */
+  .card {
+    border: var(--ink); border-radius: 16px; box-shadow: var(--sh);
+    margin-bottom: 18px; overflow: hidden; background: var(--white);
+  }
+  .card-head {
+    display: flex; align-items: stretch; border-bottom: var(--ink);
+  }
+  .card-icon {
+    min-width: 54px; display: flex; align-items: center; justify-content: center;
+    font-size: 22px; border-right: var(--ink); padding: 12px;
+  }
+  .card-info { flex: 1; padding: 12px 15px; }
+  .card-info h3 {
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 14px; margin-bottom: 1px;
+  }
+  .card-info p { font-size: 11px; color: #777; font-weight: 500; }
+  .card-dur {
+    min-width: 58px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 10px; border-left: var(--ink);
+    background: var(--grey);
+  }
+  .card-dur .dt { font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 16px; }
+  .card-dur .dl { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: #888; }
+  .card-body { padding: 15px 17px; }
+
+  /* ─── STEPS ─── */
+  .step-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .step-list li {
+    display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.55;
+  }
+  .step-list .si {
+    width: 26px; height: 26px; border-radius: 6px; border: 1.5px solid var(--black);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* ─── ROLES GRID ─── */
+  .roles-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px;
+  }
+  .role-card {
+    border: var(--ink); border-radius: 12px; box-shadow: var(--sh-s); padding: 14px 13px;
+    background: var(--white); cursor: default; transition: transform .15s;
+  }
+  .role-card:hover { transform: translateY(-2px); }
+  .role-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .role-icon {
+    width: 38px; height: 38px; border-radius: 10px; border: var(--ink);
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+    flex-shrink: 0;
+  }
+  .role-name { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 13px; }
+  .role-tasks { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .role-tasks li {
+    font-size: 11px; line-height: 1.4; padding-left: 12px; position: relative; color: #444;
+  }
+  .role-tasks li::before {
+    content: '→'; position: absolute; left: 0; color: var(--red); font-weight: 700;
+    font-size: 10px;
+  }
+  .role-badge {
+    display: inline-block; margin-top: 7px; font-size: 10px; font-weight: 700;
+    padding: 2px 9px; border-radius: 10px; border: 1.5px solid var(--black);
+  }
+
+  /* ─── ZINE PAGES ─── */
+  .zine-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-top: 12px;
+  }
+  .zp {
+    border: var(--ink); border-radius: 10px; aspect-ratio: .707;
+    padding: 7px 6px; display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: var(--sh-s); position: relative; overflow: hidden;
+  }
+  .zp .pn { font-size: 7px; font-weight: 700; opacity: .4; }
+  .zp .pi { font-size: 18px; text-align: center; flex: 1; display: flex; align-items: center; justify-content: center; }
+  .zp .pt { font-size: 8.5px; font-weight: 700; line-height: 1.3; }
+  .zp .role-tag {
+    position: absolute; top: 4px; right: 4px;
+    font-size: 7px; font-weight: 700; padding: 1px 5px; border-radius: 6px;
+    border: 1px solid var(--black);
+  }
+  .zp-1 { background: var(--red); color: var(--white); }
+  .zp-1 .pn, .zp-1 .role-tag { color: rgba(255,255,255,.7); border-color: rgba(255,255,255,.3); }
+  .zp-23 { background: #FFF8E1; }
+  .zp-45 { background: #E8F5E9; }
+  .zp-67 { background: #E3F2FD; }
+  .zp-8 { background: var(--black); color: var(--white); }
+  .zp-8 .pt { color: var(--yellow); }
+  .zp-8 .pn { color: rgba(255,255,255,.4); }
+
+  /* ─── PITCH TRACK ─── */
+  .pitch-track { display: flex; flex-direction: column; gap: 9px; margin-top: 10px; }
+  .pt-row { display: flex; gap: 11px; align-items: flex-start; }
+  .pt-dot {
+    width: 34px; height: 34px; border-radius: 50%; border: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0; box-shadow: var(--sh-s);
+  }
+  .pt-content .pt-t { font-weight: 700; font-size: 13px; margin-bottom: 2px; }
+  .pt-content .pt-d { font-size: 12px; color: #555; line-height: 1.5; }
+
+  /* ─── NOTE BOX ─── */
+  .note {
+    border-radius: 11px; padding: 12px 15px; margin-top: 12px;
+    display: flex; gap: 10px; align-items: flex-start; font-size: 12px; line-height: 1.6;
+  }
+  .note .ni { font-size: 18px; flex-shrink: 0; }
+  .note strong { display: block; font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+  .note-yellow { background: #FFF8E1; border: 2px solid var(--yellow); }
+  .note-green { background: #E8F5E9; border: 2px solid var(--mint); color: #2E7D32; }
+  .note-blue { background: #E3F2FD; border: 2px solid var(--turquoise); color: #01579B; }
+
+  /* ─── TIPS ─── */
+  .tips-row {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 10px; margin-top: 28px;
+  }
+  .tip-card {
+    border: var(--ink); border-radius: 12px; padding: 14px;
+    box-shadow: var(--sh-s); background: var(--white);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .tip-card .ti { font-size: 20px; flex-shrink: 0; }
+  .tip-card .tt { font-size: 12px; line-height: 1.5; }
+  .tip-card .tt strong { display: block; font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+
+  /* ─── FOOTER ─── */
+  .footer-band {
+    background: var(--black); padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-band p { font-size: 11px; color: rgba(255,255,255,.5); }
+  .footer-band .flogo {
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 13px;
+    color: var(--yellow); letter-spacing: -.3px;
+  }
+
+  @media(max-width:520px) {
+    .roles-grid { grid-template-columns: 1fr; }
+    .zine-grid { gap: 5px; }
+    .parcours { grid-template-columns: 1fr; }
+    .ph-arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-deco">ZINE</div>
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span>LS4YOU · Axe 2 · Auto-valorisation</div>
+    <h1>Le <em>Zine</em> collectif<br>de territoire</h1>
+    <p class="hero-desc">Un parcours en 3 temps pour co-construire un magazine collectif à partir des visites de territoire, avec des rôles clairs pour chaque jeune.</p>
+    <div class="hero-chips">
+      <span class="hc">👥 Groupe · NEET 16-25</span>
+      <span class="hc">📰 1 Zine collectif</span>
+      <span class="hc">🎭 4 rôles répartis</span>
+      <span class="hc">🗓 3 séances</span>
+    </div>
+  </div>
+</header>
+
+<!-- PARCOURS STRIP -->
+<div class="parcours">
+  <div class="parcours-phase">
+    <div class="ph-num">Temps 1</div>
+    <div class="ph-label">Avant<br>les visites</div>
+    <div class="ph-dur">≈ 1h</div>
+  </div>
+  <div class="ph-arrow">→</div>
+  <div class="parcours-phase ph-visit">
+    <div class="ph-num">Entre-deux</div>
+    <div class="ph-label">Les visites<br>de territoire</div>
+    <div class="ph-dur">Terrain</div>
+  </div>
+  <div class="ph-arrow" style="color:var(--yellow);">→</div>
+  <div class="parcours-phase">
+    <div class="ph-num">Temps 2 + 3</div>
+    <div class="ph-label">Fabriquer<br>& Restituer</div>
+    <div class="ph-dur">≈ 2h</div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ══ PHASE 1 ══ -->
+  <div class="phase-sep">
+    <div class="ps-label" style="background:var(--yellow);">
+      <span class="ps-ico">🔭</span> Temps 1 · Avant les visites
+    </div>
+  </div>
+
+  <!-- RÉPARTITION DES RÔLES -->
+  <div class="sec-title">
+    <div class="sec-num" style="background:var(--yellow);">1</div>
+    <div class="sec-text">
+      <h2>Répartition des rôles</h2>
+      <p>Chaque jeune choisit sa mission pour les visites</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon" style="background:#FFF8E1;">🎭</div>
+      <div class="card-info">
+        <h3>4 rôles, 1 mission commune</h3>
+        <p>Le groupe se répartit en 4 pôles selon ses appétences — chacun·e sait ce qu'il·elle va observer et rapporter du terrain.</p>
+      </div>
+      <div class="card-dur">
+        <span class="dt">30'</span>
+        <span class="dl">min</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="roles-grid">
+
+        <div class="role-card">
+          <div class="role-head">
+            <div class="role-icon" style="background:#FFF8E1;">📸</div>
+            <div class="role-name">Reporter·ice<br>Image</div>
+          </div>
+          <ul class="role-tasks">
+            <li>Photographier les lieux et les personnes rencontrées</li>
+            <li>Filmer des séquences courtes (max 30 sec)</li>
+            <li>Sélectionner les 5 meilleures images pour le Zine</li>
+          </ul>
+          <span class="role-badge" style="background:#FFF8E1;">📷 Avant les visites : tester l'appareil / smartphone</span>
+        </div>
+
+        <div class="role-card">
+          <div class="role-head">
+            <div class="role-icon" style="background:#FCE4EC;">🎤</div>
+            <div class="role-name">Reporter·ice<br>Parole</div>
+          </div>
+          <ul class="role-tasks">
+            <li>Préparer 2-3 questions à poser aux habitants / acteurs</li>
+            <li>Prendre des notes pendant les échanges</li>
+            <li>Retranscrire une citation forte pour le Zine</li>
+          </ul>
+          <span class="role-badge" style="background:#FCE4EC;">🎙️ Avant les visites : rédiger les questions</span>
+        </div>
+
+        <div class="role-card">
+          <div class="role-head">
+            <div class="role-icon" style="background:#E8F5E9;">🗺️</div>
+            <div class="role-name">Reporter·ice<br>Territoire</div>
+          </div>
+          <ul class="role-tasks">
+            <li>Observer et noter : qu'est-ce qui manque ? qu'est-ce qui fonctionne ?</li>
+            <li>Repérer les chiffres clés et données utiles</li>
+            <li>Rédiger le « diagnostic » des pages 2-3 du Zine</li>
+          </ul>
+          <span class="role-badge" style="background:#E8F5E9;">📋 Avant les visites : grille d'observation</span>
+        </div>
+
+        <div class="role-card">
+          <div class="role-head">
+            <div class="role-icon" style="background:#E3F2FD;">✏️</div>
+            <div class="role-name">Directeur·ice<br>Artistique</div>
+          </div>
+          <ul class="role-tasks">
+            <li>Choisir les couleurs et le style graphique du Zine</li>
+            <li>Créer la couverture (page 1) et la mise en page</li>
+            <li>Assurer la cohérence visuelle de l'ensemble</li>
+          </ul>
+          <span class="role-badge" style="background:#E3F2FD;">🎨 Avant les visites : esquisser la couverture</span>
+        </div>
+
+      </div>
+
+      <div class="note note-yellow" style="margin-top:14px;">
+        <span class="ni">💡</span>
+        <div><strong>Conseil de répartition</strong>Les appétences identifiées lors d'une activité LS4YOU précédente (ex. « Moi au sommet de mon art ») peuvent guider le choix. Si le groupe est petit, un·e jeune peut combiner deux rôles.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRÉPARER LES OUTILS -->
+  <div class="sec-title" style="margin-top:24px;">
+    <div class="sec-num" style="background:var(--yellow);">2</div>
+    <div class="sec-text">
+      <h2>Préparer ses outils de terrain</h2>
+      <p>Chaque rôle repart avec ce qu'il faut pour collecter</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon" style="background:#E3F2FD;">🧰</div>
+      <div class="card-info">
+        <h3>Kit terrain par rôle</h3>
+        <p>Préparé et validé en groupe avant le départ</p>
+      </div>
+      <div class="card-dur">
+        <span class="dt">30'</span>
+        <span class="dl">min</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li>
+          <span class="si" style="background:#FFF8E1;">📸</span>
+          <span><strong>Reporter·ice Image :</strong> smartphone chargé, grille de cadrage (gros plan / vue d'ensemble / portrait), formulaire de consentement photo simplifié.</span>
+        </li>
+        <li>
+          <span class="si" style="background:#FCE4EC;">🎤</span>
+          <span><strong>Reporter·ice Parole :</strong> carnet + stylo, guide d'entretien à 3 questions préparées en groupe, grille de prise de notes.</span>
+        </li>
+        <li>
+          <span class="si" style="background:#E8F5E9;">🗺️</span>
+          <span><strong>Reporter·ice Territoire :</strong> grille d'observation (forces / manques / surprises), accès à des données locales de base si disponibles.</span>
+        </li>
+        <li>
+          <span class="si" style="background:#E3F2FD;">✏️</span>
+          <span><strong>Directeur·ice Artistique :</strong> carnet de croquis, palette de couleurs choisie, référence d'un Zine existant pour s'inspirer.</span>
+        </li>
+      </ul>
+
+      <div class="note note-blue">
+        <span class="ni">📲</span>
+        <div><strong>Le smartphone comme outil pro</strong>Photographier, cadrer, noter, enregistrer = des compétences documentaires reconnues. C'est l'occasion de le nommer avec le groupe avant le terrain.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ENTRE-DEUX ══ -->
+  <div class="phase-sep">
+    <div class="ps-label" style="background:var(--black); color:var(--yellow);">
+      <span class="ps-ico">🚌</span> Entre-deux · Les visites de territoire
+    </div>
+  </div>
+
+  <div class="note note-yellow" style="margin-bottom:18px;">
+    <span class="ni">🗺️</span>
+    <div>Chaque jeune applique son rôle sur le terrain. L'intervenant·e reste disponible mais n'intervient pas dans la collecte — c'est le moment d'autonomie du groupe.</div>
+  </div>
+
+  <!-- ══ PHASE 2+3 ══ -->
+  <div class="phase-sep">
+    <div class="ps-label" style="background:var(--red); color:var(--white);">
+      <span class="ps-ico">✂️</span> Temps 2 · Fabriquer le Zine collectif
+    </div>
+  </div>
+
+  <!-- DÉBRIEF RAPIDE -->
+  <div class="sec-title">
+    <div class="sec-num" style="background:var(--red); color:var(--white);">3</div>
+    <div class="sec-text">
+      <h2>Débrief terrain + sélection</h2>
+      <p>Chaque rôle partage sa récolte, le groupe sélectionne</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon" style="background:#FCE4EC;">🔄</div>
+      <div class="card-info">
+        <h3>Mise en commun par rôle</h3>
+        <p>Tour de table rapide avant de se lancer dans la fabrication</p>
+      </div>
+      <div class="card-dur">
+        <span class="dt">20'</span>
+        <span class="dl">min</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li><span class="si" style="background:#FFF8E1;">📸</span><span>Reporter·ice Image montre ses 5 photos sélectionnées — le groupe valide ou échange.</span></li>
+        <li><span class="si" style="background:#FCE4EC;">🎤</span><span>Reporter·ice Parole lit la citation forte retenue — le groupe choisit son emplacement dans le Zine.</span></li>
+        <li><span class="si" style="background:#E8F5E9;">🗺️</span><span>Reporter·ice Territoire présente ses observations clés — le groupe formule 2-3 phrases pour les pages 2-3.</span></li>
+        <li><span class="si" style="background:#E3F2FD;">✏️</span><span>Directeur·ice Artistique présente l'esquisse de couverture — ajustements rapides si besoin.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FABRIQUER -->
+  <div class="sec-title" style="margin-top:20px;">
+    <div class="sec-num" style="background:var(--red); color:var(--white);">4</div>
+    <div class="sec-text">
+      <h2>Fabrication collective du Zine</h2>
+      <p>Un A4 plié en 8 — chaque rôle prend en charge ses pages</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon" style="background:#FCE4EC;">📰</div>
+      <div class="card-info">
+        <h3>Chantier Zine — travail en parallèle</h3>
+        <p>Chacun·e travaille sur ses pages, le DA assure la cohérence</p>
+      </div>
+      <div class="card-dur">
+        <span class="dt">50'</span>
+        <span class="dl">min</span>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="zine-grid">
+        <div class="zp zp-1">
+          <span class="pn">P.1</span>
+          <span class="role-tag" style="background:rgba(255,255,255,.15);">DA</span>
+          <span class="pi">🏷️</span>
+          <span class="pt">Couverture + titre du projet</span>
+        </div>
+        <div class="zp zp-23">
+          <span class="pn">P.2-3</span>
+          <span class="role-tag" style="background:#E8F5E9;">Territoire</span>
+          <span class="pi">🔍</span>
+          <span class="pt">Diagnostic : pourquoi on a agi ?</span>
+        </div>
+        <div class="zp zp-45">
+          <span class="pn">P.4-5</span>
+          <span class="role-tag" style="background:#FCE4EC;">Parole</span>
+          <span class="pi">💬</span>
+          <span class="pt">Citations + portraits des rencontres</span>
+        </div>
+        <div class="zp zp-67">
+          <span class="pn">P.6-7</span>
+          <span class="role-tag" style="background:#FFF8E1;">Image</span>
+          <span class="pi">📸</span>
+          <span class="pt">Photos clés + légendes</span>
+        </div>
+        <div class="zp zp-8" style="grid-column:1/-1; aspect-ratio:auto; flex-direction:row; gap:12px; padding:10px 14px; align-items:center;">
+          <span style="font-size:22px;">🔗</span>
+          <div>
+            <span class="pt" style="font-size:11px; display:block; margin-bottom:2px;">Page 8 — Le Pont Pro <span style="color:rgba(255,255,255,.4); font-size:9px; margin-left:5px;">Tous les rôles</span></span>
+            <span style="font-size:10px; color:rgba(255,255,255,.55);">QR code → vidéo de restitution ou page de présentation collective en ligne</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note-yellow" style="margin-top:14px;">
+        <span class="ni">🧰</span>
+        <div><strong>Matériel</strong>Papier A4 · Feutres de couleur · Colle · Ciseaux · Photos imprimées · Canva (smartphone / ordi) pour la version numérique + QR code à générer en ligne.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PHASE 3 ══ -->
+  <div class="phase-sep">
+    <div class="ps-label" style="background:var(--mint); color:var(--white);">
+      <span class="ps-ico">🎤</span> Temps 3 · Préparer la restitution
+    </div>
+  </div>
+
+  <!-- PRÉPARATION PITCH -->
+  <div class="sec-title">
+    <div class="sec-num" style="background:var(--mint); color:var(--white);">5</div>
+    <div class="sec-text">
+      <h2>Construire le pitch collectif</h2>
+      <p>Chaque rôle prépare sa prise de parole pour le jour J</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon" style="background:#E8F5E9;">🎬</div>
+      <div class="card-info">
+        <h3>Répétition du pitch · structure à 4 voix</h3>
+        <p>Chaque rôle raconte sa partie — ensemble, ça fait un récit complet</p>
+      </div>
+      <div class="card-dur">
+        <span class="dt">30'</span>
+        <span class="dl">min</span>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="pitch-track">
+        <div class="pt-row">
+          <div class="pt-dot" style="background:#E3F2FD;">🗺️</div>
+          <div class="pt-content">
+            <div class="pt-t">Reporter·ice Territoire — « Le contexte » (1 min)</div>
+            <div class="pt-d">Présente le territoire, le besoin identifié, pourquoi on est allé sur le terrain. S'appuie sur les pages 2-3 du Zine.</div>
+          </div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-dot" style="background:#FFF8E1;">📸</div>
+          <div class="pt-content">
+            <div class="pt-t">Reporter·ice Image — « Ce qu'on a vu » (1 min)</div>
+            <div class="pt-d">Montre les photos, raconte ce que l'image dit du territoire. S'appuie sur les pages 6-7.</div>
+          </div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-dot" style="background:#FCE4EC;">🎤</div>
+          <div class="pt-content">
+            <div class="pt-t">Reporter·ice Parole — « Ce qu'on a entendu » (1 min)</div>
+            <div class="pt-d">Lit la citation forte, restitue l'échange avec un habitant ou acteur. S'appuie sur les pages 4-5.</div>
+          </div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-dot" style="background:#E8F5E9;">✏️</div>
+          <div class="pt-content">
+            <div class="pt-t">Directeur·ice Artistique — « Ce qu'on a créé » (1 min)</div>
+            <div class="pt-d">Présente le Zine, explique les choix graphiques et ce que l'objet représente pour le groupe.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note-green" style="margin-top:12px;">
+        <span class="ni">🔁</span>
+        <div><strong>Une répétition chronométrée (4 min au total)</strong>L'intervenant·e joue le rôle du public et pose une question à la fin. Objectif : que chacun·e sache exactement ce qu'il·elle dit le jour J.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLÔTURE -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon" style="background:#E8F5E9;">⭐</div>
+      <div class="card-info">
+        <h3>Clôture valorisante</h3>
+        <p>Partir avec la fierté du travail accompli — et une trace concrète</p>
+      </div>
+      <div class="card-dur">
+        <span class="dt">10'</span>
+        <span class="dl">min</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li><span class="si" style="background:#E8F5E9;">📰</span><span>Chaque jeune reçoit son exemplaire du Zine collectif — un objet qu'il·elle a co-construit, à montrer.</span></li>
+        <li><span class="si" style="background:#FFF8E1;">💬</span><span>Tour de table rapide : <em>« Quelle compétence j'ai mise en jeu dans mon rôle ? »</em> — l'intervenant·e la nomme et la valide.</span></li>
+        <li><span class="si" style="background:#E3F2FD;">📧</span><span>La version Canva est envoyée par email à chacun·e — elle peut être partagée avec un conseiller, un employeur.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TIPS INTERVENANTE -->
+  <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#AAA; margin-top:32px; margin-bottom:14px; text-align:center;">Posture pédagogique</div>
+  <div class="tips-row">
+    <div class="tip-card">
+      <span class="ti">🎭</span>
+      <div class="tt"><strong>Le rôle comme ancre</strong>Nommer le rôle tout au long de l'atelier. « En tant que Reporter·ice Territoire, qu'est-ce que tu as remarqué ? » — ça donne une identité professionnelle temporaire.</div>
+    </div>
+    <div class="tip-card">
+      <span class="ti">🔗</span>
+      <div class="tt"><strong>Relier rôle et compétence</strong>À chaque étape, nommer la compétence mobilisée par le rôle : Reporter Image → maîtrise numérique, Directeur·ice Artistique → communication visuelle.</div>
+    </div>
+    <div class="tip-card">
+      <span class="ti">📰</span>
+      <div class="tt"><strong>L'objet comme preuve</strong>Le Zine tenu dans les mains = preuve tangible d'un projet mené à terme. Ce n'est pas un exercice scolaire, c'est une réalisation.</div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer-band">
+  <div class="flogo">LS4YOU · Mission Locale Pays Basque</div>
+  <p>Axe 2 — Auto-valorisation · Zine collectif de territoire</p>
+</footer>
+
+</body>
+</html>
