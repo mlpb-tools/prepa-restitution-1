@@ -38,22 +38,22 @@
   .badge {
     display: inline-flex; align-items: center; gap: 7px;
     background: var(--yellow); border: var(--ink); border-radius: 20px;
-    padding: 4px 14px; font-weight: 700; font-size: 11px;
+    padding: 4px 14px; font-weight: 700; font-size: 13px;
     box-shadow: 2px 2px 0 var(--black); margin-bottom: 16px;
     text-transform: uppercase; letter-spacing: .6px;
   }
   .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
   h1 {
     font-family: 'Poppins', sans-serif; font-weight: 900;
-    font-size: clamp(26px, 5.5vw, 46px); color: var(--white); line-height: 1.05;
+    font-size: clamp(28px, 6vw, 50px); color: var(--white); line-height: 1.05;
     margin-bottom: 10px;
   }
   h1 em { color: var(--yellow); font-style: normal; }
-  .hero-desc { color: rgba(255,255,255,.65); font-size: 13px; line-height: 1.65; max-width: 480px; }
+  .hero-desc { color: rgba(255,255,255,.65); font-size: 15px; line-height: 1.65; max-width: 480px; }
   .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .hc {
     background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.18);
-    border-radius: 20px; padding: 4px 13px; font-size: 11px;
+    border-radius: 20px; padding: 4px 13px; font-size: 13px;
     color: rgba(255,255,255,.8); font-weight: 600;
   }
 
@@ -67,15 +67,15 @@
     padding: 14px 18px; text-align: center; position: relative; cursor: default;
   }
   .ph-num {
-    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 10px;
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 12px;
     text-transform: uppercase; letter-spacing: 1px; opacity: .5; margin-bottom: 2px;
   }
   .ph-label {
-    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 13px; line-height: 1.2;
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 15px; line-height: 1.2;
   }
-  .ph-dur { font-size: 10px; font-weight: 600; opacity: .6; margin-top: 2px; }
+  .ph-dur { font-size: 12px; font-weight: 600; opacity: .6; margin-top: 2px; }
   .ph-arrow {
-    font-size: 18px; opacity: .4; flex-shrink: 0;
+    font-size: 20px; opacity: .4; flex-shrink: 0;
     padding: 0 4px;
   }
   .ph-visit {
@@ -91,15 +91,15 @@
     display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
   }
   .sec-num {
-    width: 40px; height: 40px; border-radius: 50%; border: var(--ink);
+    width: 44px; height: 44px; border-radius: 50%; border: var(--ink);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 16px;
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 18px;
     box-shadow: var(--sh-s); flex-shrink: 0;
   }
   .sec-text h2 {
-    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 17px; line-height: 1.2;
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.2;
   }
-  .sec-text p { font-size: 12px; color: #777; font-weight: 500; margin-top: 2px; }
+  .sec-text p { font-size: 14px; color: #777; font-weight: 500; margin-top: 2px; }
 
   /* ─── PHASE SEPARATOR ─── */
   .phase-sep {
@@ -109,10 +109,10 @@
     display: flex; align-items: center; gap: 10px; flex-shrink: 0;
     border: var(--ink); border-radius: 30px; padding: 6px 16px;
     box-shadow: var(--sh-s);
-    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 12px;
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 14px;
     text-transform: uppercase; letter-spacing: .5px;
   }
-  .phase-sep .ps-ico { font-size: 16px; }
+  .phase-sep .ps-ico { font-size: 18px; }
   .phase-sep::before, .phase-sep::after {
     content: ''; flex: 1; height: 2px; background: #DDD;
   }
@@ -127,32 +127,32 @@
   }
   .card-icon {
     min-width: 54px; display: flex; align-items: center; justify-content: center;
-    font-size: 22px; border-right: var(--ink); padding: 12px;
+    font-size: 24px; border-right: var(--ink); padding: 12px;
   }
   .card-info { flex: 1; padding: 12px 15px; }
   .card-info h3 {
-    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 14px; margin-bottom: 1px;
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 16px; margin-bottom: 1px;
   }
-  .card-info p { font-size: 11px; color: #777; font-weight: 500; }
+  .card-info p { font-size: 13px; color: #777; font-weight: 500; }
   .card-dur {
-    min-width: 58px; display: flex; flex-direction: column;
+    min-width: 62px; display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     padding: 10px; border-left: var(--ink);
     background: var(--grey);
   }
-  .card-dur .dt { font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 16px; }
-  .card-dur .dl { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: #888; }
+  .card-dur .dt { font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 18px; }
+  .card-dur .dl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: #888; }
   .card-body { padding: 15px 17px; }
 
   /* ─── STEPS ─── */
   .step-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .step-list li {
-    display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.55;
+    display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.55;
   }
   .step-list .si {
-    width: 26px; height: 26px; border-radius: 6px; border: 1.5px solid var(--black);
+    width: 30px; height: 30px; border-radius: 6px; border: 1.5px solid var(--black);
     display: flex; align-items: center; justify-content: center;
-    font-size: 13px; flex-shrink: 0; margin-top: 1px;
+    font-size: 15px; flex-shrink: 0; margin-top: 1px;
   }
 
   /* ─── ROLES GRID ─── */
@@ -166,22 +166,22 @@
   .role-card:hover { transform: translateY(-2px); }
   .role-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
   .role-icon {
-    width: 38px; height: 38px; border-radius: 10px; border: var(--ink);
-    display: flex; align-items: center; justify-content: center; font-size: 18px;
+    width: 40px; height: 40px; border-radius: 10px; border: var(--ink);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
     flex-shrink: 0;
   }
-  .role-name { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 13px; }
+  .role-name { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 15px; }
   .role-tasks { list-style: none; display: flex; flex-direction: column; gap: 5px; }
   .role-tasks li {
-    font-size: 11px; line-height: 1.4; padding-left: 12px; position: relative; color: #444;
+    font-size: 13px; line-height: 1.4; padding-left: 12px; position: relative; color: #444;
   }
   .role-tasks li::before {
     content: '→'; position: absolute; left: 0; color: var(--red); font-weight: 700;
-    font-size: 10px;
+    font-size: 12px;
   }
   .role-badge {
-    display: inline-block; margin-top: 7px; font-size: 10px; font-weight: 700;
-    padding: 2px 9px; border-radius: 10px; border: 1.5px solid var(--black);
+    display: inline-block; margin-top: 7px; font-size: 12px; font-weight: 700;
+    padding: 3px 10px; border-radius: 10px; border: 1.5px solid var(--black);
   }
 
   /* ─── support PAGES ─── */
@@ -193,12 +193,12 @@
     padding: 7px 6px; display: flex; flex-direction: column; justify-content: space-between;
     box-shadow: var(--sh-s); position: relative; overflow: hidden;
   }
-  .zp .pn { font-size: 7px; font-weight: 700; opacity: .4; }
-  .zp .pi { font-size: 18px; text-align: center; flex: 1; display: flex; align-items: center; justify-content: center; }
-  .zp .pt { font-size: 8.5px; font-weight: 700; line-height: 1.3; }
+  .zp .pn { font-size: 9px; font-weight: 700; opacity: .4; }
+  .zp .pi { font-size: 20px; text-align: center; flex: 1; display: flex; align-items: center; justify-content: center; }
+  .zp .pt { font-size: 11px; font-weight: 700; line-height: 1.3; }
   .zp .role-tag {
     position: absolute; top: 4px; right: 4px;
-    font-size: 7px; font-weight: 700; padding: 1px 5px; border-radius: 6px;
+    font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 6px;
     border: 1px solid var(--black);
   }
   .zp-1 { background: var(--red); color: var(--white); }
@@ -214,20 +214,20 @@
   .pitch-track { display: flex; flex-direction: column; gap: 9px; margin-top: 10px; }
   .pt-row { display: flex; gap: 11px; align-items: flex-start; }
   .pt-dot {
-    width: 34px; height: 34px; border-radius: 50%; border: var(--ink);
+    width: 38px; height: 38px; border-radius: 50%; border: var(--ink);
     display: flex; align-items: center; justify-content: center;
-    font-size: 14px; flex-shrink: 0; box-shadow: var(--sh-s);
+    font-size: 16px; flex-shrink: 0; box-shadow: var(--sh-s);
   }
-  .pt-content .pt-t { font-weight: 700; font-size: 13px; margin-bottom: 2px; }
-  .pt-content .pt-d { font-size: 12px; color: #555; line-height: 1.5; }
+  .pt-content .pt-t { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+  .pt-content .pt-d { font-size: 14px; color: #555; line-height: 1.5; }
 
   /* ─── NOTE BOX ─── */
   .note {
     border-radius: 11px; padding: 12px 15px; margin-top: 12px;
-    display: flex; gap: 10px; align-items: flex-start; font-size: 12px; line-height: 1.6;
+    display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.6;
   }
-  .note .ni { font-size: 18px; flex-shrink: 0; }
-  .note strong { display: block; font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+  .note .ni { font-size: 20px; flex-shrink: 0; }
+  .note strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
   .note-yellow { background: #FFF8E1; border: 2px solid var(--yellow); }
   .note-green { background: #E8F5E9; border: 2px solid var(--mint); color: #2E7D32; }
   .note-blue { background: #E3F2FD; border: 2px solid var(--turquoise); color: #01579B; }
@@ -242,9 +242,9 @@
     box-shadow: var(--sh-s); background: var(--white);
     display: flex; gap: 10px; align-items: flex-start;
   }
-  .tip-card .ti { font-size: 20px; flex-shrink: 0; }
-  .tip-card .tt { font-size: 12px; line-height: 1.5; }
-  .tip-card .tt strong { display: block; font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+  .tip-card .ti { font-size: 24px; flex-shrink: 0; }
+  .tip-card .tt { font-size: 14px; line-height: 1.5; }
+  .tip-card .tt strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
 
   /* ─── FOOTER ─── */
   .footer-band {
@@ -252,9 +252,9 @@
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 12px;
   }
-  .footer-band p { font-size: 11px; color: rgba(255,255,255,.5); }
+  .footer-band p { font-size: 13px; color: rgba(255,255,255,.5); }
   .footer-band .flogo {
-    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 13px;
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 15px;
     color: var(--yellow); letter-spacing: -.3px;
   }
 
@@ -274,9 +274,8 @@
   <div class="hero-inner">
     <div class="badge"><span class="dot"></span>LS4YOU · Axe 2 · Auto-valorisation</div>
     <h1>Le <em>support</em> collectif<br>de territoire</h1>
-    <p class="hero-desc">Un parcours en 3 temps pour co-construire un magasupport collectif à partir des visites de territoire, avec des rôles clairs pour chaque jeune.</p>
+    <p class="hero-desc">Un parcours en 3 temps pour co-construire un support collectif à partir des visites de territoire, avec des rôles clairs pour chaque participant.</p>
     <div class="hero-chips">
-      <span class="hc">👥 Groupe · NEET 16-25</span>
       <span class="hc">📰 1 support collectif</span>
       <span class="hc">🎭 4 rôles répartis</span>
       <span class="hc">🗓 3 séances</span>
@@ -319,7 +318,7 @@
     <div class="sec-num" style="background:var(--yellow);">1</div>
     <div class="sec-text">
       <h2>Répartition des rôles</h2>
-      <p>Chaque jeune choisit sa mission pour les visites</p>
+      <p>Chaque participant choisit sa mission pour les visites</p>
     </div>
   </div>
 
@@ -394,7 +393,7 @@
 
       <div class="note note-yellow" style="margin-top:14px;">
         <span class="ni">💡</span>
-        <div><strong>Conseil de répartition</strong>Les appétences identifiées lors d'une activité LS4YOU précédente (ex. « Moi au sommet de mon art ») peuvent guider le choix. Si le groupe est petit, un·e jeune peut combiner deux rôles.</div>
+        <div><strong>Conseil de répartition</strong>Les appétences identifiées lors d'une activité LS4YOU précédente (ex. « Moi au sommet de mon art ») peuvent guider le choix. Si le groupe est petit, un·e participant·e peut combiner deux rôles.</div>
       </div>
     </div>
   </div>
@@ -456,7 +455,7 @@
 
   <div class="note note-yellow" style="margin-bottom:18px;">
     <span class="ni">🗺️</span>
-    <div>Chaque jeune applique son rôle sur le terrain. L'intervenant·e reste disponible mais n'intervient pas dans la collecte — c'est le moment d'autonomie du groupe.</div>
+    <div>Chaque participant applique son rôle sur le terrain. L'intervenant·e reste disponible mais n'intervient pas dans la collecte — c'est le moment d'autonomie du groupe.</div>
   </div>
 
   <!-- ══ PHASE 2+3 ══ -->
@@ -546,10 +545,10 @@
           <span class="pt">Photos clés + légendes</span>
         </div>
         <div class="zp zp-8" style="grid-column:1/-1; aspect-ratio:auto; flex-direction:row; gap:12px; padding:10px 14px; align-items:center;">
-          <span style="font-size:22px;">🔗</span>
+          <span style="font-size:26px;">🔗</span>
           <div>
-            <span class="pt" style="font-size:11px; display:block; margin-bottom:2px;">Page 8 — Le Pont Pro <span style="color:rgba(255,255,255,.4); font-size:9px; margin-left:5px;">Tous les rôles</span></span>
-            <span style="font-size:10px; color:rgba(255,255,255,.55);">QR code → vidéo de restitution ou page de présentation collective en ligne</span>
+            <span class="pt" style="font-size:13px; display:block; margin-bottom:2px;">Page 8 — Le Pont Pro <span style="color:rgba(255,255,255,.4); font-size:11px; margin-left:5px;">Tous les rôles</span></span>
+            <span style="font-size:12px; color:rgba(255,255,255,.55);">QR code → vidéo de restitution ou page de présentation collective en ligne</span>
           </div>
         </div>
       </div>
@@ -644,7 +643,7 @@
     </div>
     <div class="card-body">
       <ul class="step-list">
-        <li><span class="si" style="background:#E8F5E9;">📰</span><span>Chaque jeune reçoit son exemplaire du support collectif — un objet qu'il·elle a co-construit, à montrer.</span></li>
+        <li><span class="si" style="background:#E8F5E9;">📰</span><span>Chaque participant reçoit son exemplaire du support collectif — un objet qu'il·elle a co-construit, à montrer.</span></li>
         <li><span class="si" style="background:#FFF8E1;">💬</span><span>Tour de table rapide : <em>« Quelle compétence j'ai mise en jeu dans mon rôle ? »</em> — l'intervenant·e la nomme et la valide.</span></li>
         <li><span class="si" style="background:#E3F2FD;">📧</span><span>La version Canva est envoyée par email à chacun·e — elle peut être partagée avec un conseiller, un employeur.</span></li>
       </ul>
@@ -652,7 +651,7 @@
   </div>
 
   <!-- TIPS INTERVENANTE -->
-  <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#AAA; margin-top:32px; margin-bottom:14px; text-align:center;">Posture pédagogique</div>
+  <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#AAA; margin-top:32px; margin-bottom:14px; text-align:center;">Posture pédagogique</div>
   <div class="tips-row">
     <div class="tip-card">
       <span class="ti">🎭</span>
